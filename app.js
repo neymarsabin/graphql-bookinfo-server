@@ -6,7 +6,10 @@ const graphqlSchema = require('./schema/schema');
 const app = express();
 
 // graphql middleware for app
-app.use('/graphql', graphqlHttp({schema: graphqlSchema}));
+app.use('/graphql', graphqlHttp({
+	schema: graphqlSchema,
+	graphiql: true,
+}));
 
 // start application in 7878
 app.listen(7878, () => {
